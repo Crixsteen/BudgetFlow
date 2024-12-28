@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #f4f4f8;
+    --text-color: #333;
+    --background-color: #fff;
+    --card-background: #f9f9f9;
+    --positive-color: #28a745;
+    --negative-color: #dc3545;
+}
+
+body.dark {
+    --primary-color: #ffd700;
+    --secondary-color: #1e1e2f;
+    --text-color: #f0f0f0;
+    --background-color: #121212;
+    --card-background: #2c2c3a;
+    --positive-color: #00ff00;
+    --negative-color: #ff4500;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px; /* Imposta una larghezza massima */
+    background: var(--background-color);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    flex-direction: column; /* Forza la colonna per schermi piccoli */
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+header button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+header button:hover {
+    background: #0056b3;
+}
+
+.card {
+    background: var(--card-background);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Forza l'adattamento */
+    box-sizing: border-box; /* Evita che il padding spezzi il layout */
+}
+
+form input, form select, form button {
+    width: 100%; /* Assicura che rientrino nello schermo */
+    margin-bottom: 10px;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: var(--secondary-color);
+    color: var(--text-color);
+    box-sizing: border-box;
+}
+
+form button {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+    transform: scale(1.02);
+}
+
+#expense-list div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 6px;
+    background: var(--background-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+#expense-list div:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%; /* Occupa l'intero schermo su dispositivi piccoli */
+        padding: 10px;
+    }
+
+    header {
+        align-items: center;
+    }
+
+    form input, form select, form button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #expense-list div {
+        flex-direction: column; /* Impila gli elementi della lista */
+        align-items: flex-start;
+    }
+}
+
+/* Ottimizzazione per schermi desktop */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 800px; /* Aumenta la larghezza massima per i desktop */
+        margin: 20px auto; /* Centra il contenitore orizzontalmente */
+    }
+
+    header h1 {
+        font-size: 28px; /* Migliora la leggibilità del titolo */
+    }
+
+    form input, form select, form button {
+        font-size: 16px; /* Proporzioni migliori per gli input */
+    }
+
+    button {
+        padding: 12px 25px; /* Pulsanti più grandi e comodi */
+        font-size: 16px; /* Dimensione del testo nei pulsanti */
+    }
+
+    .card {
+        padding: 20px; /* Aggiungi più spazio interno */
+    }
+
+    #expense-list div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+
+    #expense-chart {
+        max-height: 400px; /* Dimensione migliore del grafico */
+    }
+}
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Spese</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 Gestione Spese</h1>
+            <button id="theme-toggle">🌞 Modalità Scura</button>
+        </header>
+        <form id="expense-form" class="card">
+            <h2>Aggiungi una spesa</h2>
+            <input type="text" id="description" placeholder="Descrizione (es. Affitto, Stipendio)" required>
+            <input type="number" id="amount" placeholder="Importo (€)" required>
+            <select id="category">
+                <option value="entrata">Entrata</option>
+                <option value="uscita">Uscita</option>
+            </select>
+            <input type="date" id="date" required>
+            <button type="submit">Aggiungi</button>
+        </form>
+        <section id="balance-section" class="card">
+            <h2>Bilancio Netto</h2>
+            <p id="balance" class="balance-positive">0.00 €</p>
+            <p id="suggestions"></p>
+        </section>
+
+        <section id="month-selector-section" class="card">
+            <h2>Visualizza Spese per Mese</h2>
+            <select id="month-selector">
+                <!-- Opzioni dinamiche aggiunte tramite JavaScript -->
+            </select>
+            <button id="load-month">Carica Spese</button>
+        </section>
+        <section id="expense-list-section" class="card">
+            <h2>Lista delle Spese</h2>
+            <div id="expense-list"></div>
+        </section>
+        <section id="chart-section" class="card">
+            <h2>Andamento Spese</h2>
+            <canvas id="expense-chart" width="400" height="200"></canvas>
+        </section>
+
+<!-- Nuova sezione aggiornata per il download -->
+<section id="download-section" class="card">
+    <h2>Esporta Dati</h2>
+    <button id="download-csv">Scarica Report (CSV)</button>
+</section>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
